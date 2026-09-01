@@ -1,0 +1,62 @@
+# News2Alpha backtest configuration (example)
+# Copy to config/backtest_config.yaml and adjust. Everything here runs locally;
+# no external service is involved.
+
+# ========== Backtest parameters ==========
+backtest:
+  symbols:
+    - BTCUSDT
+    - ETHUSDT
+  timeframes:
+    - 15m
+    - 4h
+  decision_timeframe: 15m         # timeframe the AI agent makes decisions on
+  decision_cadence_nbars: 20      # decide once every N bars
+  backtest_days: 1                # or set start_date / end_date below
+  fee_bps: 5                      # taker fee, 5 = 0.05%
+  slippage_bps: 2                 # 2 = 0.02%, always adverse to the holder
+  # start_date: "2025-01-15"
+  # end_date: "2025-01-16"
+  initial_balance: 1000           # USDT
+  leverage:
+    btc_eth: 5
+    altcoin: 5
+  fill_policy: next_open        # next_open / bar_vwap / mid / mark
+  lookback_bars: 200            # warmup bars loaded before start_date per timeframe
+  ohlcv_path: "examples/sample_data/ohlcv_15m.csv"
+  prompt_variant: basic           # basic / aggressive / conservative / scalping
+  cache_ai: true
+  replay_only: false
+
+  # Hard risk limits. These same numbers are rendered into the system prompt AND
+  # enforced by the validator, so the model is never told a limit the code does
+  # not apply.
+  risk:
+    max_positions: 3
+    btc_eth_max_leverage: 5
+    altcoin_max_leverage: 5
+    btc_eth_max_position_value_ratio: 5.0   # cap = equity x ratio
+    altcoin_max_position_value_ratio: 1.0
+    max_margin_usage: 0.9                   # fraction of equity
+    min_position_size: 12                   # USDT
+    min_position_size_btc_eth: 60           # USDT
+    min_risk_reward_ratio: 3.0
+    min_confidence: 75
+  poll_interval_by_timeframe:
+    1m: 5
+    5m: 10
+    15m: 20
+    1h: 30
+    4h: 30
+
+# ========== News analysis ==========
+news:
+  target_user_id: 1               # sample user id whose recommended news to load
+  max_news: 100
+  articles_path: "examples/sample_data/articles.csv"
+  recommendations_path: "examples/sample_data/daily_recommendations.csv"
+
+# ========== Output ==========
+output:
+  results_dir: "output/backtest_results"
+  log_level: INFO

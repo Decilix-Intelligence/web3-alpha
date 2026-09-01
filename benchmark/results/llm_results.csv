@@ -1,0 +1,5 @@
+model,family,protocol,metric,value,evaluated_users
+Prompt4NR,llm-track,impression-ranking,AUC,0.8285,43840
+Prompt4NR,llm-track,impression-ranking,MRR,0.6383,43840
+Prompt4NR,llm-track,impression-ranking,NDCG@5,0.6438,43840
+Prompt4NR,llm-track,impression-ranking,NDCG@10,0.6815,43840

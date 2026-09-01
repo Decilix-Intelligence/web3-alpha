@@ -1,0 +1,2 @@
+model,family,protocol,status,evaluated_samples,public_note
+Prompt4NR,llm-track,impression-ranking,completed,43840,4-GPU DDP run completed successfully; metrics are reported in llm_results.csv.

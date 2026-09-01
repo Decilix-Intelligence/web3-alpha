@@ -1,0 +1,26 @@
+# News2Alpha Configuration (example)
+# Copy to config/config.yaml and fill in your own values.
+# Prefer environment variables for secrets — DO NOT commit real keys.
+
+llm:
+  provider: "openai"            # openai / deepseek
+  # Leave blank and export OPENAI_API_KEY / DEEPSEEK_API_KEY instead of hardcoding.
+  api_key: "${OPENAI_API_KEY}"
+  base_url: "https://api.openai.com/v1"
+  model: "gpt-3.5-turbo"
+  temperature: 0.3
+  max_tokens: 4000
+
+finbert:
+  model_name: "ProsusAI/finbert"
+  batch_size: 32
+  device: "auto"               # auto / cuda / cpu
+
+news:
+  target_user_id: 1
+  max_news: 30
+  articles_path: "examples/sample_data/articles.csv"
+  recommendations_path: "examples/sample_data/daily_recommendations.csv"
+
+# Sentiment thresholds (dispersion, impact, bull/bear, extreme) are constructor
+# arguments on EnginePromptFormatter — see sentinels/engine/formatter.py.

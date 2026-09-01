@@ -1,0 +1,12 @@
+pandas>=2.0
+numpy>=1.24
+pyarrow>=14.0
+pyyaml>=6.0
+requests>=2.31
+tqdm>=4.66
+
+# This file installs only the shared runtime. For reproducible extras use:
+#   python3 -m pip install -e ".[benchmark]"
+#   python3 -m pip install -e ".[sentiment]"
+#   python3 -m pip install -e ".[llm]"
+#   python3 -m pip install -e ".[all,dev]"
