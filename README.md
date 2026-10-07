@@ -1,24 +1,18 @@
 # W3Alpha
 
+![Motivation: from Web3 news assessment to trading decisions](docs/motivation.png)
+
+**Motivation.** Web3 news supports both information assessment ("Can I trust?") and subsequent trading decisions ("Should I buy?"). W3α complements recommendation ranking quality with downstream trading utility.
+
 Anonymous research artifact for **W3: A News-to-Alpha Benchmark for Utility-Driven Web3 Recommendation and Trading Backtesting**, submitted to WSDM.
 
-This repository joins the original recommendation benchmark and the News2Alpha sentiment/backtesting engine into one reproducible pipeline:
+This repository joins the original recommendation benchmark and the News2Alpha sentiment/backtesting engine into one reproducible pipeline.
 
-```text
-Web3 articles + anonymous interactions
-              │
-              ▼
- recommendation benchmark ──► per-user Top-K news
-                                      │
-                                      ▼
-                             sentiment factors + memo
-                                      │
-                                      ▼
-                         trading agent / shared backtester
-                                      │
-                                      ▼
-                       ranking metrics + trading utility
-```
+## Framework overview
+
+![W3α framework: personalized recommendation, sentiment context, and trading utility evaluation](docs/method-overview.png)
+
+**Method overview.** W3α connects personalized Web3 news recommendation with trading utility evaluation. Recommended news is temporally aligned, converted into standardized sentiment context, and evaluated through agent-based backtests under shared transaction costs and risk constraints.
 
 > **Dataset access:** [W3-NewsAlpha on Hugging Face](https://huggingface.co/datasets/jining-luan/W3-NewsAlpha). See the dataset overview below for the paper-aligned description.
 
