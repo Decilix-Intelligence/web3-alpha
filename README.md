@@ -20,11 +20,33 @@ Web3 articles + anonymous interactions
                        ranking metrics + trading utility
 ```
 
-> **Dataset availability:** 数据集将在论文被接收后公开。
->
-> **The dataset will be released after the paper is accepted.**
+> **Dataset access:** [W3-NewsAlpha on Hugging Face](https://huggingface.co/datasets/jining-luan/W3-NewsAlpha). See the dataset overview below for the paper-aligned description.
 
 The repository currently contains source code, synthetic examples, tests, benchmark protocols, and aggregate result tables only. It contains no private dataset, identity mapping, credentials, model checkpoints, or personal author information.
+
+## W3α dataset
+
+The dataset is hosted at [W3-NewsAlpha on Hugging Face](https://huggingface.co/datasets/jining-luan/W3-NewsAlpha). Sign in and review the dataset's access conditions to request access.
+
+W3α connects personalized Web3 news recommendation with downstream trading-utility evaluation. It was constructed from CoinMeta's news archive and anonymized user interaction logs collected from **January 1, 2022 to January 1, 2026**. The news covers financial reporting, exchange announcements, and project updates. Article and interaction timestamps are normalized to UTC with **millisecond-level precision** for temporal alignment.
+
+The following statistics are reported in **Table 2 of the paper**:
+
+| Statistic | Value |
+| --- | ---: |
+| News articles | 732,526 |
+| Active users | 9,732 |
+| Keywords | 7,050 |
+| Likes | 61,102 |
+| Favorites / bookmarks | 189,368 |
+| Comments | 22,386 |
+| Dislikes | 4,253 |
+
+The data includes article titles, abstracts, bodies, and metadata, together with click/impression logs and separate tables for likes, favorites, comments, and dislikes. Preprocessing removes invalid or low-quality content, cleans text, excludes users with fewer than five interactions, and filters abnormal automated activity. Impression records are ordered chronologically and partitioned into **80% training, 10% validation, and 10% test** to avoid using future interactions for training.
+
+Evaluation combines recommendation ranking with a shared trading protocol: timestamp-valid recommended news is converted into FinBERT sentiment factors and a market memo, then supplied to the trading agent under common transaction costs and risk constraints. Alongside ranking metrics such as AUC, MRR, NDCG, Recall, and Precision, the paper reports cumulative return (CR), return standard deviation (S.D.), Sharpe ratio (SR), and maximum drawdown (MDD).
+
+This description follows **Section 3.2, Table 2, Section 3.3, and Appendix C** of the paper. **Appendix F** documents consent, salted SHA-256 user anonymization, removal of personally identifiable information, and academic-only use. The dataset must not be used for re-identification or malicious market-sentiment manipulation.
 
 ## Repository layout
 
@@ -96,7 +118,7 @@ The included OHLCV file is deterministic synthetic data. Its returns validate th
 
 ## 3. Run the integrated pipeline
 
-After the dataset is released, place the anonymous WebRec split under `data/webrec_v1/`:
+Prepare the anonymous WebRec benchmark split from the dataset under `data/webrec_v1/` using the file contract in [docs/DATA.md](docs/DATA.md):
 
 ```text
 data/webrec_v1/
