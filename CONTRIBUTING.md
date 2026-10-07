@@ -8,7 +8,7 @@ Contributions should keep the benchmark reproducible.
 - Add or update reproduction commands when adding a model.
 - Write outputs under `benchmark/results/`.
 - Avoid committing private credentials, raw database dumps, production logs, or large generated artifacts.
-- Do not add names, personal email addresses, account handles, affiliations, local absolute paths, or reversible identity mappings while the repository is under anonymous review.
+- Do not add names, personal email addresses, account handles, affiliations, local absolute paths, or reversible identity mappings.
 - Run `python3 scripts/check_anonymity.py --root .` and `pytest` before submitting a change.
 - Keep the `w3alpha` bridge fitted on `train.csv`; validation and test interactions are evaluation labels, not recommendation inputs.
 - For new baselines, report at least `AUC`, `MRR`, and the relevant NDCG metrics.

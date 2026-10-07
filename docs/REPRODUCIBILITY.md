@@ -1,6 +1,6 @@
 # Reproducibility
 
-The code, synthetic fixtures, and aggregate result tables are available during anonymous review. **The research dataset will be released after paper acceptance.**
+This repository provides source code, synthetic fixtures, and aggregate result tables. The research dataset is not bundled with the code.
 
 ## Environment
 
@@ -16,7 +16,7 @@ The base and test suites do not make network calls. FinBERT may download model w
 
 ## Data placement
 
-After release, put the anonymous benchmark files at `data/webrec_v1/` as described in [DATA.md](DATA.md). The distribution location is withheld during double-blind review.
+Prepare the anonymous benchmark files at `data/webrec_v1/` as described in [DATA.md](DATA.md).
 
 ## Integrated news-to-alpha path
 

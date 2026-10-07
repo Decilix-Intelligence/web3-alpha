@@ -1,4 +1,4 @@
-"""Load a local post-acceptance article Parquet with Hugging Face Datasets."""
+"""Load a local article Parquet with Hugging Face Datasets."""
 
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ def main() -> None:
     if not args.articles.is_file():
         raise SystemExit(
             f"Dataset file not found: {args.articles}. "
-            "The research dataset will be released after paper acceptance."
+            "Provide a local article Parquet with --articles; see docs/DATA.md."
         )
 
     articles = load_dataset("parquet", data_files={"full": str(args.articles)}, split="full")

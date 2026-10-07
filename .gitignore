@@ -34,7 +34,7 @@ cache/
 .mypy_cache/
 .ruff_cache/
 
-# The research dataset is not part of the anonymous submission repository.
+# The research dataset is not bundled with the code repository.
 /data/
 /splits/
 /datasets/

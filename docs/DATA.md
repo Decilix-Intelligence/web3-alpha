@@ -1,12 +1,10 @@
 # Data access and contract
 
-**数据集将在论文被接收后公开。 The dataset will be released after the paper is accepted.**
+The research dataset is not bundled with this code repository. Raw exports, reversible identity mappings, and private storage locations are excluded. Synthetic fixtures under `examples/sample_data/` exist only to exercise the code.
 
-This anonymous submission repository intentionally ships no research dataset, raw export, reversible identity mapping, or private storage location. Synthetic fixtures under `examples/sample_data/` exist only to exercise the code.
+## Data layout
 
-## Planned release layout
-
-The post-acceptance release will follow this logical layout:
+Prepare local dataset files using this logical layout:
 
 ```text
 data/articles/cms_article.parquet
@@ -18,7 +16,7 @@ data/webrec_v1/{train,valid,test}.csv
 data/webrec_v1/stats.csv
 ```
 
-Checksums will be published with the dataset. The release location is deliberately omitted during anonymous review.
+Keep checksums with local dataset files to verify their integrity.
 
 ## WebRec bridge contract
 

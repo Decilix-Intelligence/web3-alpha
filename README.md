@@ -4,7 +4,7 @@
 
 **Motivation.** Web3 news supports both information assessment ("Can I trust?") and subsequent trading decisions ("Should I buy?"). W3α complements recommendation ranking quality with downstream trading utility.
 
-Anonymous research artifact for **W3: A News-to-Alpha Benchmark for Utility-Driven Web3 Recommendation and Trading Backtesting**, submitted to WSDM.
+Research artifact for **W3: A News-to-Alpha Benchmark for Utility-Driven Web3 Recommendation and Trading Backtesting**.
 
 This repository joins the original recommendation benchmark and the News2Alpha sentiment/backtesting engine into one reproducible pipeline.
 
@@ -14,15 +14,11 @@ This repository joins the original recommendation benchmark and the News2Alpha s
 
 **Method overview.** W3α connects personalized Web3 news recommendation with trading utility evaluation. Recommended news is temporally aligned, converted into standardized sentiment context, and evaluated through agent-based backtests under shared transaction costs and risk constraints.
 
-> **Dataset access:** [W3-NewsAlpha on Hugging Face](https://huggingface.co/datasets/jining-luan/W3-NewsAlpha). See the dataset overview below for the paper-aligned description.
-
 The repository currently contains source code, synthetic examples, tests, benchmark protocols, and aggregate result tables only. It contains no private dataset, identity mapping, credentials, model checkpoints, or personal author information.
 
 ## W3α dataset
 
-The dataset is hosted at [W3-NewsAlpha on Hugging Face](https://huggingface.co/datasets/jining-luan/W3-NewsAlpha). Sign in and review the dataset's access conditions to request access.
-
-W3α connects personalized Web3 news recommendation with downstream trading-utility evaluation. It was constructed from CoinMeta's news archive and anonymized user interaction logs collected from **January 1, 2022 to January 1, 2026**. The news covers financial reporting, exchange announcements, and project updates. Article and interaction timestamps are normalized to UTC with **millisecond-level precision** for temporal alignment.
+W3α connects personalized Web3 news recommendation with downstream trading-utility evaluation. It was constructed from an industrial Web3 news archive and anonymized user interaction logs collected from **January 1, 2022 to January 1, 2026**. The news covers financial reporting, exchange announcements, and project updates. Article and interaction timestamps are normalized to UTC with **millisecond-level precision** for temporal alignment.
 
 The following statistics are reported in **Table 2 of the paper**:
 

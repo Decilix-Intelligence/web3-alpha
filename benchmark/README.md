@@ -1,6 +1,6 @@
 # Benchmark
 
-This directory contains the W3Alpha benchmark runners included with the anonymous submission.
+This directory contains the W3Alpha benchmark runners.
 
 ## Tracks
 
@@ -20,9 +20,8 @@ The two tracks use different candidate sets and should be reported separately.
 
 ## Data
 
-The dataset will be released after the paper is accepted. During review, this
-repository contains code and aggregate results only. After release, place the
-anonymous files under `data/webrec_v1/` as described in `../docs/DATA.md`.
+This repository contains code and aggregate results. Prepare anonymous dataset
+files under `data/webrec_v1/` as described in `../docs/DATA.md`.
 
 Then run:
 

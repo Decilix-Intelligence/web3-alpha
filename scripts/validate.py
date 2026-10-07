@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the code-only repository and an optional post-acceptance dataset."""
+"""Validate the code-only repository and an optional local dataset."""
 
 from __future__ import annotations
 
@@ -63,10 +63,10 @@ def check_repository(root: Path, errors: list[str]) -> None:
     readme = root / "README.md"
     if readme.is_file():
         text = readme.read_text(encoding="utf-8")
-        if "数据集将在论文被接收后公开" in text:
-            pass_("README contains the required dataset-release statement")
+        if "docs/DATA.md" in text:
+            pass_("README links to the dataset file contract")
         else:
-            fail("README is missing the required dataset-release statement", errors)
+            fail("README is missing the dataset file contract link", errors)
 
 
 def check_required_data(root: Path, errors: list[str]) -> bool:
@@ -196,7 +196,7 @@ def parse_args() -> argparse.Namespace:
         "--data-root",
         type=Path,
         default=None,
-        help="optional root containing data/ and splits/ for post-acceptance validation",
+        help="optional root containing local data/ and splits/ files for validation",
     )
     return parser.parse_args()
 
